@@ -935,7 +935,7 @@ input[type=range]{width:100%;height:30px;accent-color:var(--moss)}
     var saved = ''; try { saved = localStorage.getItem(LS_NAME) || ''; } catch(e){}
     qbox.innerHTML =
       '<p class="qn">Antes de começar</p><p class="qt">Digite seu nome para entrar no ranking.</p>'+
-      '<div class="field"><label for="q-name">Seu nome</label><input id="q-name" type="text" maxlength="20" autocomplete="nickname" placeholder="Ex.: Ana"></div>'+
+      '<div class="field"><label for="q-name">Seu nome</label><input id="q-name" type="text" maxlength="20" autocomplete="nickname" placeholder="Ex.: Thiago"></div>'+
       '<p class="rk-note" id="q-err" role="alert"></p>'+
       '<div class="btns"><button class="btn solid" type="button" id="q-start">Começar o quiz</button><button class="btn" type="button" id="q-rank">Ver ranking</button></div>';
     var inp = $('#q-name'); inp.value = saved;
