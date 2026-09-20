@@ -511,7 +511,7 @@ input[type=range]{width:100%;height:30px;accent-color:var(--moss)}
   <div class="wrap">
     <div class="head">
       <h2>Teste o que você aprendeu</h2>
-      <p>Digite seu nome, responda às seis perguntas e veja sua posição no ranking de quem já jogou.</p>
+      <p>Digite seu nome, responda às dez perguntas e veja sua posição no ranking de quem já jogou.</p>
     </div>
     <div class="quiz" id="quiz-box" aria-live="polite"></div>
   </div>
@@ -533,6 +533,7 @@ input[type=range]{width:100%;height:30px;accent-color:var(--moss)}
   <div class="wrap"><p>Ciências, 9º ano: alteração do ecossistema.</p></div>
 </footer>
 
+<script src="config.js"></script>
 <script>
 (function(){
   var $ = function(s, r){ return (r||document).querySelector(s); };
@@ -849,23 +850,20 @@ input[type=range]{width:100%;height:30px;accent-color:var(--moss)}
 
   /* ============ QUIZ ============ */
   var quiz = [
-    {q:'O que é um ecossistema?', o:['O conjunto de seres vivos e dos fatores físicos e químicos do ambiente, interagindo entre si','Apenas o conjunto de animais de uma região','Somente as plantas e o solo de uma floresta','Uma área protegida por lei'], c:0,
-     x:'Um ecossistema reúne a comunidade de seres vivos e o ambiente físico e químico com o qual eles interagem, como água, solo, luz e temperatura.'},
-    {q:'Por que uma espécie invasora pode desequilibrar um ecossistema?', o:['Porque sempre é maior que as espécies nativas','Porque produz mais oxigênio do que as nativas','Porque muitas vezes não tem predadores naturais e se multiplica, competindo com as espécies nativas','Porque só vive em ambientes poluídos'], c:2,
-     x:'Fora de sua região de origem, a espécie pode não ter predadores nem doenças que controlem sua população, e passa a competir com as nativas por alimento e espaço.'},
-    {q:'A eutrofização de um lago é causada principalmente por:', o:['Falta de luz solar','Aumento da salinidade da água','Excesso de nutrientes, como os do esgoto e de fertilizantes, que faz as algas se multiplicarem e reduz o oxigênio','Excesso de peixes predadores'], c:2,
-     x:'Com nutrientes em excesso, as algas proliferam. Quando morrem, a decomposição consome o oxigênio da água e peixes e outros seres morrem.'},
-    {q:'Numa cadeia alimentar, se os predadores de uma população desaparecem, o que tende a acontecer com a presa?', o:['Desaparecer também','Permanecer igual','Virar predadora','Aumentar em número, podendo esgotar seu alimento e desequilibrar o ambiente'], c:3,
-     x:'Sem o controle dos predadores, a população da presa cresce e pode consumir demais o que serve de alimento para ela.'},
-    {q:'Qual gás, liberado nas queimadas e na queima de combustíveis, intensifica o efeito estufa?', o:['Gás carbônico (CO₂)','Gás nitrogênio (N₂)','Gás hélio (He)','Gás oxigênio (O₂)'], c:0,
-     x:'O efeito estufa natural é necessário para manter a Terra aquecida. O problema é o excesso de gases como o CO₂ e o metano, que retém calor demais.'},
-    {q:'O que costuma diferenciar as alterações causadas pelo ser humano das causadas pela natureza?', o:['Elas nunca podem ser revertidas','Elas só acontecem em cidades','A velocidade e a escala, que muitas vezes superam a capacidade de recuperação do ecossistema','Elas não afetam a cadeia alimentar'], c:2,
-     x:'Ecossistemas se recuperam de perturbações naturais com o tempo. Mudanças rápidas e em grande escala podem ultrapassar essa resiliência.'}
+    {"q": "Qual é a principal causa direta da morte de peixes na eutrofização de um lago?", "o": ["Algas mortas se decompõem e consomem o oxigênio dissolvido na água", "A sombra das algas esfria a água até os peixes não resistirem", "O excesso de nitrogênio deixa a água salgada demais para muitos peixes", "As algas vivas devoram os ovos e os filhotes de todos os peixes"], "c": 0, "x": "Com nutrientes em excesso as algas proliferam. Ao morrer, são decompostas por microrganismos que consomem o oxigênio da água, e peixes e outros animais morrem por falta dele."},
+    {"q": "Na cadeia capim → gafanhoto → sapo → cobra, um fungo elimina quase todos os sapos. O que se espera, primeiro, para gafanhotos e cobras?", "o": ["Gafanhotos diminuem e cobras aumentam bastante", "Gafanhotos e cobras aumentam ao mesmo tempo", "Gafanhotos aumentam e as cobras diminuem", "Gafanhotos e cobras diminuem juntos"], "c": 2, "x": "Sem os sapos, os gafanhotos perdem seu predador e tendem a aumentar. As cobras perdem o alimento e tendem a diminuir."},
+    {"q": "Qual descrição define corretamente uma espécie invasora?", "o": ["Espécie que vive em uma só região do planeta e em nenhum outro local", "Espécie nativa que aumentou em número depois de anos de muita chuva", "Espécie que se alimenta de plantas e de animais ao mesmo tempo", "Espécie exótica que se multiplica muito e ameaça as nativas"], "c": 3, "x": "A invasora é exótica (vem de fora), se adapta bem, se reproduz muito e compete com as nativas. Espécie que só existe em um lugar é endêmica; a que come plantas e animais é onívora."},
+    {"q": "Sobre o aquecimento global e o buraco na camada de ozônio, qual afirmação está correta?", "o": ["O primeiro vem dos gases CFC; o segundo, do CO₂ e do metano", "Os dois vêm do excesso de gás oxigênio presente na atmosfera", "Os dois têm a mesma causa e afetam só as regiões polares", "O primeiro vem de CO₂ e metano; o segundo, de gases como os CFCs"], "c": 3, "x": "O efeito estufa intensificado vem do excesso de gases como CO₂ e metano, que retêm calor. O buraco na camada de ozônio foi causado principalmente pelos CFCs, que deixam passar mais radiação ultravioleta. São problemas diferentes."},
+    {"q": "Depois de um incêndio, quais plantas costumam recolonizar a área primeiro?", "o": ["Árvores grandes típicas de uma floresta já madura", "Ervas e gramíneas de crescimento rápido e pouco exigentes", "Plantas raras que só crescem sob a sombra de árvores altas", "Espécies que dependem de solo profundo e cheio de húmus"], "c": 1, "x": "É a sucessão ecológica: espécies pioneiras, de crescimento rápido, chegam primeiro. Com o tempo o solo se recupera e surgem espécies mais exigentes, até uma comunidade mais madura."},
+    {"q": "Por que retirar a mata das margens de um rio pode causar assoreamento?", "o": ["Sem sombra, a água esquenta e evapora, deixando o leito raso", "Sem as árvores, o rio passa a receber mais chuva ácida do que antes", "Sem raízes para segurar o solo, a chuva leva terra para o rio", "Sem os animais da mata, os peixes deixam de fazer ninhos"], "c": 2, "x": "As raízes da mata ciliar seguram o solo. Sem elas, a chuva carrega terra e sedimentos para o rio, que fica mais raso e turvo (assoreamento)."},
+    {"q": "Por que, em geral, existem menos gaviões do que gafanhotos numa mesma área?", "o": ["Os gaviões precisam de mais oxigênio do que os gafanhotos para viver", "Os gafanhotos vivem muito mais tempo do que os gaviões", "A energia disponível diminui a cada nível da cadeia alimentar", "Os gaviões só conseguem se reproduzir em regiões muito frias do planeta"], "c": 2, "x": "Em cada nível trófico grande parte da energia se perde, principalmente como calor. Por isso os níveis do topo sustentam menos indivíduos do que os da base."},
+    {"q": "Qual é o objetivo de uma unidade de conservação de proteção integral, como um parque nacional?", "o": ["Manter a floresta em pé para a retirada contínua de madeira", "Reservar terras para lavouras e pastagens de grande escala", "Preservar a natureza, admitindo apenas usos indiretos, como pesquisa", "Liberar a caça e a pesca para as comunidades da região"], "c": 2, "x": "Nas unidades de proteção integral o objetivo é preservar a natureza, e só é permitido o uso indireto dos recursos, como pesquisa científica, educação e turismo ecológico. A retirada de madeira pertence às unidades de uso sustentável."},
+    {"q": "Duas áreas queimaram: a A fica ao lado de mata nativa e a B está isolada no meio de pastagens. Qual tende a se recuperar mais rápido?", "o": ["B, porque o isolamento impede a chegada de qualquer espécie invasora", "B, porque o solo de pastagem é mais rico em nutrientes que o da mata", "As duas no mesmo ritmo, porque o fogo afeta todas as áreas do mesmo jeito", "A, porque sementes e animais chegam com facilidade da mata vizinha"], "c": 3, "x": "A recuperação depende de sementes, animais e do que restou no solo. Perto de mata nativa a área recebe esses colonizadores com facilidade. Isolada, ela tende a demorar mais."},
+    {"q": "Qual característica ajuda muitas plantas do Cerrado a resistirem ao fogo ocasional?", "o": ["Folhas muito largas que armazenam um grande volume de água", "Cascas grossas e raízes profundas que permitem rebrotar após o fogo", "Sementes que só germinam quando o solo fica sempre encharcado", "Crescimento rápido apenas durante os meses mais frios do ano"], "c": 1, "x": "Muitas plantas do Cerrado têm casca grossa, que protege o caule, e raízes profundas, que permitem rebrotar depois do fogo. O problema é a frequência e a intensidade das queimadas causadas por pessoas."}
   ];
-  /* ---- Ranking: cole aqui o endereço do seu Realtime Database (Firebase). Exemplo:
-     'https://meu-projeto-default-rtdb.firebaseio.com'
-     Deixando vazio, o ranking funciona só neste aparelho. ---- */
-  var DB_URL = 'https://ecossistemaemequilibrio-default-rtdb.firebaseio.com/';
+  /* ---- Ranking: o endereço do banco de dados fica no arquivo config.js.
+     Sem endereço, o ranking funciona só neste aparelho. ---- */
+  var DB_URL = (window.DB_URL_CONFIG || '');
   var LS_KEY = 'ecossistema-ranking', LS_NAME = 'ecossistema-nome';
 
   var qbox = $('#quiz-box'), qi = 0, qs = 0, player = '', t0 = 0, timer = null;
@@ -893,6 +891,7 @@ input[type=range]{width:100%;height:30px;accent-color:var(--moss)}
     var best = {};
     list.forEach(function(e){
       if(!e || typeof e.nome !== 'string' || typeof e.acertos !== 'number'){ return; }
+      if((e.total || quiz.length) !== quiz.length){ return; }
       var t = typeof e.tempo === 'number' ? e.tempo : 99999, k = norm(e.nome), b = best[k];
       if(!b || e.acertos > b.acertos || (e.acertos === b.acertos && t < b.tempo)){
         best[k] = {nome:e.nome, acertos:e.acertos, total:(e.total || quiz.length), tempo:t, ts:(e.ts || 0)};
@@ -936,7 +935,7 @@ input[type=range]{width:100%;height:30px;accent-color:var(--moss)}
     var saved = ''; try { saved = localStorage.getItem(LS_NAME) || ''; } catch(e){}
     qbox.innerHTML =
       '<p class="qn">Antes de começar</p><p class="qt">Digite seu nome para entrar no ranking.</p>'+
-      '<div class="field"><label for="q-name">Seu nome</label><input id="q-name" type="text" maxlength="20" autocomplete="nickname" placeholder="Ex.: Thiago"></div>'+
+      '<div class="field"><label for="q-name">Seu nome</label><input id="q-name" type="text" maxlength="20" autocomplete="nickname" placeholder="Ex.: Ana"></div>'+
       '<p class="rk-note" id="q-err" role="alert"></p>'+
       '<div class="btns"><button class="btn solid" type="button" id="q-start">Começar o quiz</button><button class="btn" type="button" id="q-rank">Ver ranking</button></div>';
     var inp = $('#q-name'); inp.value = saved;
@@ -964,7 +963,8 @@ input[type=range]{width:100%;height:30px;accent-color:var(--moss)}
 
   function finish(){
     var entry = {nome:player, acertos:qs, total:quiz.length, tempo:Math.round((Date.now() - t0)/1000), ts:Date.now()};
-    var msg = qs >= 5 ? 'Ótimo domínio do tema.' : qs >= 3 ? 'Bom caminho. Revise as seções acima e tente de novo.' : 'Explore o cenário e a cadeia alimentar e tente novamente.';
+    var pct = qs / quiz.length;
+    var msg = pct >= 0.8 ? 'Ótimo domínio do tema.' : pct >= 0.5 ? 'Bom caminho. Revise as seções acima e tente de novo.' : 'Explore o cenário e a cadeia alimentar e tente novamente.';
     qbox.innerHTML = '<p class="result"></p><p>'+msg+' Você levou '+entry.tempo+' segundos.</p><div id="rk-box"><p class="rk-note">Salvando sua pontuação...</p></div>'+
       '<div class="btns"><button class="btn solid" type="button" id="q-again">Jogar de novo</button><button class="btn" type="button" id="rk-refresh">Atualizar ranking</button></div>';
     $('.result', qbox).textContent = player+', você acertou '+qs+' de '+quiz.length;
